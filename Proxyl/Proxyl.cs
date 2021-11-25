@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 
 namespace Proxyl
 {
+    
     public abstract class Proxyl<T> : IProxyl<T>
     {
-        private IProxylDataRetriever<T> _retriever;
-        private readonly IRedditApiProxyListIterator<T> _iterator;
+        private readonly IProxylRepository<T> _retriever;
+        private readonly IProxylIterator<T> _iterator;
 
         public IList<T> Items;
 
-        protected Proxyl(IProxylDataRetriever<T> retriever, IRedditApiProxyListIterator<T> iterator)
+        protected Proxyl(IProxylRepository<T> retriever, IProxylIterator<T> iterator)
         {
             _retriever = retriever;
             _iterator = iterator;

@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 namespace Proxyl
 {
-    public abstract class RedditApiProxyListIterator<T> : IRedditApiProxyListIterator<T>
+    public abstract class ProxylIterator<T> : IProxylIterator<T>
     {
         private readonly Proxyl<T> _proxy;
         
@@ -12,7 +12,7 @@ namespace Proxyl
 
         public ValueTask DisposeAsync() => new(Task.CompletedTask);
 
-        protected RedditApiProxyListIterator(Proxyl<T> proxy)
+        protected ProxylIterator(Proxyl<T> proxy)
         {
             _proxy = proxy;
         }
