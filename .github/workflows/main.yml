@@ -26,8 +26,8 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-    - name: Package DataAccess.Core
+    - name: Package 
       run: dotnet pack Proxyl/Proxyl.csproj --configuration Release --version-suffix ".$GITHUB_RUN_NUMBER"
 
-    - name: Publish EntityFramework.DataAccess
-      run: dotnet nuget push "Proxyl/bin/Release/Proxyl.1.0.0.$GITHUB_RUN_NUMBER.nupkg" --api-key ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/Melen-LLC/index.json
+    - name: Publish 
+      run: ls && dotnet nuget push "Proxyl/bin/Release/Proxyl.1.0.0.$GITHUB_RUN_NUMBER.nupkg" --api-key ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/Melen-LLC/index.json
