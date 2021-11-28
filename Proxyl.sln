@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proxyl", "Proxyl\Proxyl.csproj", "{92A0631F-9887-4ADB-9EA0-92A4E2B130A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C8D008A9-8F5E-4213-89D8-C8988715B216}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{92A0631F-9887-4ADB-9EA0-92A4E2B130A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92A0631F-9887-4ADB-9EA0-92A4E2B130A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92A0631F-9887-4ADB-9EA0-92A4E2B130A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D008A9-8F5E-4213-89D8-C8988715B216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D008A9-8F5E-4213-89D8-C8988715B216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D008A9-8F5E-4213-89D8-C8988715B216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D008A9-8F5E-4213-89D8-C8988715B216}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

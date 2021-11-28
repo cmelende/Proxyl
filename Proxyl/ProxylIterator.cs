@@ -1,20 +1,23 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Proxyl
 {
-    public abstract class ProxylIterator<T> : IProxylIterator<T>
+    public class ProxylIterator<T> : IProxylIterator<T>
     {
-        private readonly Proxyl<T> _proxy;
-        
+        private readonly IProxyl<T> _proxyl;
+        private readonly IProxylRepository<T> _repository;
+
         private int _position = -1;
 
-        public T Current => _proxy.Items[_position];
+        public T Current => _proxyl.Items[_position];
 
         public ValueTask DisposeAsync() => new(Task.CompletedTask);
 
-        protected ProxylIterator(Proxyl<T> proxy)
+        public ProxylIterator(IProxyl<T> proxyl, IProxylRepository<T> repository)
         {
-            _proxy = proxy;
+            _proxyl = proxyl;
+            _repository = repository;
         }
        
         public async ValueTask<bool> MoveNextAsync()
@@ -26,18 +29,33 @@ namespace Proxyl
                 return true;
             }
 
-            bool fetchedMore = await _proxy.TryFetchMoreAsync();
+            bool fetchedMore = await TryFetchMore();
             if (fetchedMore && await PositionIsValidIndex(newPosition))
             {
                 _position = newPosition;
                 return true;
             }
+            
             return false;
+        }
+
+        private async Task<bool> TryFetchMore()
+        {
+           IList<T> newItems = await _repository.GetMoreDataAsync();
+           bool fetchedMore = newItems != null && newItems.Count != 0;
+           if (!fetchedMore) return false;
+           
+           foreach (T newItem in newItems)
+           {
+               _proxyl.Items.Add(newItem);
+           }
+
+           return true;
         }
         
         private async Task<bool> PositionIsValidIndex(int newPosition)
         {
-            return newPosition >= 0 && newPosition < (await _proxy.GetItems()).Count;
+            return newPosition >= 0 && newPosition < (await _proxyl.GetItemsAsync()).Count;
         }
     }
 }
