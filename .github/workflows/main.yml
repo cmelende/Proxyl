@@ -29,5 +29,8 @@ jobs:
     - name: Package 
       run: dotnet pack Proxyl/Proxyl.csproj --configuration Release --version-suffix ".$GITHUB_RUN_NUMBER"
 
-    - name: Publish 
-      run: ls && dotnet nuget push "Proxyl/bin/Release/Proxyl.1.0.0.$GITHUB_RUN_NUMBER.nupkg" --api-key ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/Melen-LLC/index.json
+    - name: Publish to Github
+      run: dotnet nuget push "Proxyl/bin/Release/Proxyl.1.0.0.$GITHUB_RUN_NUMBER.nupkg" --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json
+
+    - name: Publish to Github
+      run: dotnet nuget push "Proxyl/bin/Release/Proxyl.1.0.0.$GITHUB_RUN_NUMBER.nupkg" --api-key ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/Melen-LLC/index.json
