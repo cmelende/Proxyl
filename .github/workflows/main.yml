@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  push:
+    branches: 
+        - '*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu 
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore
+      
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+    - name: Package DataAccess.Core
+      run: dotnet pack Proxyl/Proxyl.csproj --configuration Release --version-suffix ".$GITHUB_RUN_NUMBER"
+
+    - name: Publish EntityFramework.DataAccess
+      run: dotnet nuget push "Proxyl/bin/Release/Proxyl.1.0.0.$GITHUB_RUN_NUMBER.nupkg" --api-key ${{secrets.GITHUB_TOKEN}} -s https://nuget.pkg.github.com/Melen-LLC/index.json
