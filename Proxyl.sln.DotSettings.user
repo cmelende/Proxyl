@@ -1,9 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9d51fe0c_002D6d2a_002D40f2_002Db26a_002Dcaf14daeb7fc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateProxyl_ReturnsValidProxyl" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C8D008A9-8F5E-4213-89D8-C8988715B216::net6.0::Tests.ProxylTests.GetItemsAsync_ReturnsCorrectList&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C8D008A9-8F5E-4213-89D8-C8988715B216::net6.0::Tests.ProxylTests.GetAsyncEnumerator_ReturnsCorrectEnumerator&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C8D008A9-8F5E-4213-89D8-C8988715B216::net6.0::Tests.ProxylIteratorTests.Current_ReturnsValidItem&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::C8D008A9-8F5E-4213-89D8-C8988715B216::net6.0::Tests.ProxylIteratorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C8D008A9-8F5E-4213-89D8-C8988715B216::net6.0::Tests.Component.ProxylComponentTests.VerifyEnumerationOverWholeList&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

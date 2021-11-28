@@ -5,7 +5,7 @@ using FakeItEasy;
 using NUnit.Framework;
 using Proxyl;
 
-namespace Tests
+namespace Tests.Unit
 {
     [TestFixture]
     public class ProxylTests
