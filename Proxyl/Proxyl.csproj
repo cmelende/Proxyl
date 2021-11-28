@@ -10,7 +10,7 @@
     <PropertyGroup>
         <OutputType>Library</OutputType>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <PackageId>Proxly</PackageId>
+        <PackageId>Proxyl</PackageId>
         <Version>1.0.0$(VersionSuffix)</Version>
         <Authors>cmelende</Authors>
         <PackageDescription>Proxyl, the proxy list package</PackageDescription>
